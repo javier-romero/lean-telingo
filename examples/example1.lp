@@ -1,4 +1,4 @@
-% clingo example1.lp --output=reify | clingo - ../meta-encodings/meta-tel.lp -c lambda=5
+% clingo example1.lp --output=reify | clingo - ../meta/meta-tel.lp -c lambda=5 0
 
 %
 % Domain predicates

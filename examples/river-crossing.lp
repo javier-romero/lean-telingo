@@ -1,5 +1,5 @@
-% clingo river-crossing.lp --output=reify | clingo - ../meta-encodings/meta-tel.lp -c lambda=6 0
-% clingo river-crossing.lp --output=reify | clingo - ../meta-encodings/meta-tel.lp -c lambda=7 0
+% clingo river-crossing.lp --output=reify | clingo - ../meta/meta-tel.lp -c lambda=6 0
+% clingo river-crossing.lp --output=reify | clingo - ../meta/meta-tel.lp -c lambda=7 0
 
 %#program always.
 
