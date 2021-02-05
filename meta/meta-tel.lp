@@ -45,8 +45,8 @@ true(initially,0) :-       formula(initially).
 :- true(initially,T), T>0, formula(initially).
 
 % finally
-true(finally,lambda) :-       formula(initially).
-:- true(finally,T), T<lambda, formula(initially).
+true(finally,lambda) :-       formula(finally).
+:- true(finally,T), T<lambda, formula(finally).
 
 % weak prev
 formula(F) :- formula(prev(F)).
