@@ -28,7 +28,7 @@ at(X,B) :- prev(at(X,A)), move(X), route(A,B), not initially.
 at(X,A) :- prev(at(X,A)), not move(X), not initially.
 
 % The farmer cannot move item X if it is at the opposite bank
-:- move(X), item(X), prev(at(farmer,A)), not prev(at(X,A)).
+:- move(X), item(X), prev(at(farmer,A)), not prev(at(X,A)), not initially.
 
 %#program always.
 
