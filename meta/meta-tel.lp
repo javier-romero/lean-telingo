@@ -90,7 +90,7 @@ true(F,T3) :- formula(until(F,G)), time(T1), time(T2), T1<=T2,
 true(G,T2) :- formula(until(F,G)),           time(T2),
               true(until(F,G),_,T2).
 true(until(F,G),T1,T2) :- formula(until(F,G)), time(T1), time(T2), T1<=T2,
-                         true(G,T2), true(F,T3) : time(T3), T1<=T3, T3<T2.
+                          true(G,T2), true(F,T3) : time(T3), T1<=T3, T3<T2.
 
 
 %
