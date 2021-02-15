@@ -21,16 +21,13 @@ time(0..lambda).
 
 
 %
-% Connect true/2 with conjunction/2 and hold/2
+% Connect true/2 with hold/2
 % * WARNING: This is dependent on how clingo reifies the program!
-%            I do not know how to make it general: is it even possible?
+%            I do not know how to make it completely general: is it even possible?
 %
 
-true(O,T) :- conjunction(B,T), output(O,B).
-conjunction(B,T) :- true(O,T), output(O,B).
-%
-    hold(L,T) :- output(O,B), conjunction(B,T), literal_tuple(B, L), L > 0.
-not hold(L,T) :- output(O,B), conjunction(B,T), literal_tuple(B,-L), L > 0.
+true(O,T) :- hold(L,T), output(O,B), literal_tuple(B,L).
+hold(L,T) :- true(O,T), output(O,B), literal_tuple(B,L).
 
 
 %
