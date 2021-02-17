@@ -50,12 +50,14 @@ formula(F) :- formula(prev(F)).
 %
 true(F,T-1) :- true(prev(F),T), formula(prev(F)), time(T), time(T-1).
 true(prev(F),T) :- true(F,T-1), formula(prev(F)), time(T), time(T-1).
+true(prev(F),0) :- formula(prev(F)).
 
 % weak next
 formula(F) :- formula(next(F)).
 %
 true(F,T+1) :- true(next(F),T), formula(next(F)), time(T), time(T+1).
 true(next(F),T) :- true(F,T+1), formula(next(F)), time(T), time(T+1).
+true(next(F),lambda) :- formula(next(F)).
 
 % always
 formula(F) :- formula(always(F)).
